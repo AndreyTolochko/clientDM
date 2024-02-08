@@ -1,16 +1,19 @@
 import axios from 'axios'
 
 
-//https://serverdm.onrender.com
-//'http://localhost:4000'
-const BASE_URL = 'https://serverdm.onrender.com';
+const BASE_URL = () =>{
+    if(process.env.NODE_ENV === 'production'){
+        return 'https://serverdm.onrender.com'
+    }
+    return 'http://localhost:4000'
+}
 
 export default axios.create({
-    baseURL:BASE_URL,
+    baseURL:BASE_URL(),
 })
 
 export const axiosPrivate = axios.create({
-    baseURL:BASE_URL,
+    baseURL:BASE_URL(),
     headers:{'Content-Type':'application/json'},
     withCredentials:true,
 })

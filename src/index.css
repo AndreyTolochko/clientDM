@@ -464,7 +464,6 @@ code {
     width: 100%;
   }
   .dropdown-content a {
-    white-space: nowrap;
     font-size: medium;
   }
 }
