@@ -4,10 +4,12 @@ import welcomeImg from "../img/background_3.png";
 import Description from "../component/Description";
 import MatrixImage from "../component/MatrixImage";
 import axios from '../api/axios';
+import Loading from '../component/Loading';
 
 const Home = () => {
   const [matrix, setMatrix] = useState(null);
   const [matrixImg, setMatrixImg] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const isValidDate = (value) => {
     return !isNaN(Date.parse(value));
@@ -15,8 +17,10 @@ const Home = () => {
 
   const handleDateSubmit = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
     const date = e.target[0].value;
     if (!isValidDate(date)) {
+      setIsLoading(false);
       return alert("Дата введена неправильно");
     }
     const dob = new Date(date);
@@ -36,6 +40,7 @@ const Home = () => {
         setMatrix(data.matrix);
         setMatrixImg(data.img);
       }
+      setIsLoading(false)
     }
     catch(err){
       if(err?.response?.data){
@@ -43,10 +48,12 @@ const Home = () => {
         setMatrix(data.matrix);
         setMatrixImg(data.img);
       }
+      setIsLoading(false);
   };
 }
   return (
     <section className="container">
+      {isLoading && <Loading/>}
           <div className="row mt-5 welcome">
           <img src={welcomeImg} className="welcome-image" alt="Welcome_image" />
           <form className="welcome-form" onSubmit={handleDateSubmit}>
