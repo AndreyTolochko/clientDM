@@ -4,6 +4,7 @@
     --mobile-scale-width:360px;
     --desktop-scale-width:600px;
     --tablet-scale-width:500px;
+    --interface-color:#363b45;
 }
 
 .contactForm {
@@ -48,14 +49,14 @@
     width: 100%;
     padding: 15px;
     border: none;
-    background-color: #658269;
+    background-color: var(--interface-color);
     color: white;
     border-radius: 10px;
     cursor: pointer;
 }
 
 .contactForm button:hover {
-    background-color: #93e2b2;
+    background-color: #939896;
     color:#333333;
 }
 .textarea {

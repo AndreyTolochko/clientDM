@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Fragment } from "react";
 
 const About = () => {
   const [title, setTitle] = useState("О нас");

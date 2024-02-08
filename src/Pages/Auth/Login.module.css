@@ -4,7 +4,7 @@
     --mobile-scale-width:360px;
     --desktop-scale-width:600px;
     --tablet-scale-width:500px;
-    --interface-color:#658269;
+    --interface-color:#363b45;
 }
 
 
@@ -20,8 +20,7 @@
 
 .sign {
     padding-top: 40px;
-    color: #5ea252;
-    font-family: 'Ubuntu', sans-serif;
+    color: var(--interface-color);
     font-weight: bold;
     font-size: 23px;
 }
@@ -89,7 +88,7 @@ form.auth {
     cursor: pointer;
     border-radius: 5em;
     color: #fff;
-    background: linear-gradient(to right, #c9d8c6, var(--interface-color));
+    background: linear-gradient(to right, #7f9486, var(--interface-color));
     border: 0;
     padding:15px 40px;
     font-size: 18px;
